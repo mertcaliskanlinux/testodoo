@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_dr_training_root" 
+        name="Doctor and Patient" 
+        sequence="0"/>
+
+
+
+
+    <menuitem id="menu_doctor_master" 
+        name="Doctors" 
+        parent="menu_dr_training_root" 
+        sequence="10"/>
+
+
+    <menuitem id="menu_department_master" 
+        name="Departments" 
+        parent="menu_dr_training_root" 
+        sequence="10"/>
+
+    <menuitem id="menu_patient_master" 
+        name="Patients" 
+        parent="menu_dr_training_root" 
+        sequence="10"/>
+
+    <menuitem id="menu_appointment_master" 
+        name="Appointment" 
+        parent="menu_dr_training_root" 
+        sequence="10"/>
+
+    <menuitem id="menu_treatment_master" 
+        name="Treatment" 
+        parent="menu_dr_training_root" 
+        sequence="10"/>
+
+    <menuitem id="menu_wizard_master"
+        name="Wizard"
+        parent="menu_dr_training_root"
+        sequence="10"/>
+  
+
+   
+
+</odoo>

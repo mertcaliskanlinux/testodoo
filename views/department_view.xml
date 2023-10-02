@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<odoo>
+
+    <record id="department_tree" model="ir.ui.view">
+            <field name="name">dr_patients.department.tree</field>
+            <field name="model">dr_patients.department</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    
+                                
+                </tree>
+            </field>
+    </record>
+
+
+    <record id="action_dr_training_department" model="ir.actions.act_window">
+    
+        <field name="name">Department</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr_patients.department</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+
+    </record>
+    
+
+
+    
+
+    <menuitem id="menu_department_root"
+        name="Departments"
+        parent="menu_dr_training_root"
+        sequence="10"/>
+
+
+
+    <menuitem id="menu_department"
+             name="Details of Departments"
+             action="action_dr_training_department"
+             parent="menu_department_root"
+             sequence="10"
+             />
+
+
+</odoo>
+
+
+

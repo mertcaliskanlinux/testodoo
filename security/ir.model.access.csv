@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.dr_patients.doctor,access.dr_patients.doctor,model_dr_patients_doctor,base.group_user,1,1,1,1
+access.dr_patients.department,access.dr_patients.department,model_dr_patients_department,base.group_user,1,1,1,1
+access.dr_patients.patient,access.dr_patients.patient,model_dr_patients_patient,base.group_user,1,1,1,1
+access.dr_patients.appointment,access.dr_patients.appointment,model_dr_patients_appointment,base.group_user,1,1,1,1
+access.dr_patients.treatment,access.dr_patients.treatment,model_dr_patients_treatment,base.group_user,1,1,1,1
+access.dr_patients.wizard,access.dr_patients.wizard,model_dr_patients_appointment_wizard,base.group_user,1,1,1,1
+
+
+
+
+

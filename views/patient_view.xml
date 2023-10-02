@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<odoo>
+
+    <record id="department_tree" model="ir.ui.view">
+            <field name="name">dr_patients.patient.tree</field>
+            <field name="model">dr_patients.patient</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="full_name"/>
+                    <field name="national_id_no"/>
+                    <field name="age"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+
+
+                </tree>
+            </field>
+    </record>
+
+
+    <record id="action_dr_training_patient" model="ir.actions.act_window">
+    
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr_patients.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+
+    </record>
+    
+
+
+    
+
+    <menuitem id="menu_patient_root"
+        name="Patient"
+        parent="menu_dr_training_root"
+        sequence="10"/>
+
+
+
+    <menuitem id="menu_patient"
+             name="Patient of Departments"
+             action="action_dr_training_patient"
+             parent="menu_patient_root"
+             sequence="10"
+             />
+
+
+</odoo>
+
+
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<odoo>
+
+    <record id="view_hospital_appointment_form" model="ir.ui.view">
+            <field name="name">dr_patients.appointment.form</field>
+            <field name="model">dr_patients.appointment</field>
+            <field name="arch" type="xml">
+                <form string="Appointment Form">
+                    <header>
+                        <button name="action_set_confirmed" string="Set as Confirmed" type="object" class="btn-primary" attrs="{'invisible': [('stage', '!=', 'draft')]}" />
+
+                        <field name="stage" widget="statusbar"/>
+                    </header>
+                    <sheet>
+
+                        <group>
+                            <field name="code"/>
+                            <field name="appointment_date_time"/>
+                            <field name="doctor"/>
+                            <field name="patient"/>
+
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+
+    <record id="appointment_tree" model="ir.ui.view">
+            <field name="name">dr_patients.appointment.tree</field>
+            <field name="model">dr_patients.appointment</field>
+
+
+
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="doctor_full_name" string="Doctor Name"/>
+
+                    <field name="appointment_date_time" string="Appointment"/>
+                    
+                    <field name="patient_full_name" string="Patient Name"/>
+
+                    
+
+                </tree>
+            </field>
+    </record>
+
+
+
+
+
+    <record id="action_dr_training_appointment" model="ir.actions.act_window">
+    
+        <field name="name">Appointment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">dr_patients.appointment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+
+    </record>
+    
+
+
+    
+
+    <menuitem id="menu_appointment_root"
+        name="Appointment"
+        parent="menu_dr_training_root"
+        sequence="10"/>
+
+
+
+    <menuitem id="menu_appointment"
+             name="Appointment of Departments"
+             action="action_dr_training_appointment"
+             parent="menu_appointment_root"
+             sequence="10"
+             />
+
+
+</odoo>
+
+
+
+
+

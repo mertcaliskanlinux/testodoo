@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_hospital_appointment_wizard" name="Create Appointment Wizard" parent='menu_dr_training_root' sequence="10"/>
+        <record id="view_hospital_appointment_wizard_form" model="ir.ui.view">
+            <field name="name">dr_patients.appointment.wizard.form</field>
+            <field name="model">dr_patients.appointment.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create Appointment Wizard">
+                    <group>
+                        <field name="patient" required="1"/>
+                        <field name="doctor" widget="many2many_tags"/>
+                         <field name="code" />
+                    </group>
+                    <footer>
+                        <button name="create_appointment" string="Create Appointment" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_hospital_appointment_wizard" model="ir.actions.act_window">
+            <field name="name">Create Appointment Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dr_patients.appointment.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_hospital_appointment_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+
+
+
+    <menuitem id="menu_wizard_root"
+        name="Wizard"
+        parent="menu_wizard_master"
+        sequence="10"/>
+
+
+
+    <menuitem id="menu_wizard"
+             name="Wizard of Departments"
+             action="action_dr_training_appointment"
+             parent="menu_wizard_root"
+             sequence="10"
+             />
+
+
+
+</odoo>
